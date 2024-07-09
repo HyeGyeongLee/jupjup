@@ -5,16 +5,31 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import JupJup from './pages/jupjup';
+import BeforeAfter from './pages/beforeAfter';
+import SignIn from './pages/signIn';
+import SignUp from './pages/signUp';
+import ForgetPw from './pages/forgetPw';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <App />
-      <div className="flex-grow justify-center"></div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <Routes>
+					<Route path="/" element={<App />}></Route>
+					<Route path="/JupJup" element={<JupJup />}></Route>
+					<Route path="/BeforeAfter" element={<BeforeAfter />}></Route>
+					<Route path="/signin" element={<SignIn />}></Route>
+					<Route path="/signUp" element={<SignUp />}></Route>
+					<Route path="/forgetPw" element={<ForgetPw />}></Route>
+				</Routes>
+        <div className="flex-grow justify-center"></div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

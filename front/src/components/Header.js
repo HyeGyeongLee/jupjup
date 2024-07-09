@@ -22,7 +22,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-
+import { Link } from 'react-router-dom';
 // const products = [
 //   { name: '홈', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
 //   { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
@@ -42,11 +42,11 @@ export default function Example() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5 flex">
+          <Link to ="/" className="-m-1.5 p-1.5 flex">
             <span className="sr-only">Your Company</span>
             <img alt="" src={'/main/204219337.jpg'} className="h-10 w-auto" />
             <p className='ml-2 text-3xl font-black'>JUPJUP</p>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -59,30 +59,30 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-xl font-black leading-6">
+          <Link to ="/" className="text-xl font-black leading-6">
             홈
-          </a>
-          <a href="#" className="text-xl font-black leading-6">
+          </Link>
+          <Link to ="/jupjup" className="text-xl font-black leading-6">
             나눔하기
-          </a>
-          <a href="#" className="text-xl font-black leading-6">
+          </Link>
+          <Link to ="/beforeAfter" className="text-xl font-black leading-6">
             비포&에프터
-          </a>
-          <a href="#" className="text-xl font-black leading-6">
+          </Link>
+          <Link to ="/" className="text-xl font-black leading-6">
             물물교환
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6">
+          <Link to ="/signIn" className="text-sm font-semibold leading-6">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5 flex">
+            <Link to ="/" className="-m-1.5 p-1.5 flex">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
@@ -90,7 +90,7 @@ export default function Example() {
                 className="h-10 w-auto"
               />
               <p className='ml-2 text-3xl font-black'>JUPJUP</p>
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -109,38 +109,37 @@ export default function Example() {
                     <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
                   </DisclosureButton>
                 </Disclosure>
-                <a
-                  href="#"
+                <Link to ="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   홈
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to ="/jupjup"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   나눔하기
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to ="/beforeAfter"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   비포&에프터
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to ="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   물물교환
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
+                <Link
+                  to ="/signin"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
